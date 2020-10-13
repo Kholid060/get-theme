@@ -9,7 +9,7 @@ it('generate correct css variable property', () => {
 		name: 'primary',
 	})).toEqual({
 		'--bg-opacity': '1',
-		'background-color': ['#fff', 'rgba(var(--bg-primary), var(--bg-opacity))'],
+		'background-color': ['rgba(var(--bg-primary), var(--bg-opacity))'],
 	});
 });
 

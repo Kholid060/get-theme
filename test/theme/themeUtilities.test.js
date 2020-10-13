@@ -39,17 +39,14 @@ it('generate background color utilities', async () => {
 	expect(css).toMatchCss(`
 		.bg-primary {
 			--bg-opacity: 1;
-			background-color: #2E3440;
 			background-color: rgba(var(--bg-primary), var(--bg-opacity))
 		}
 		.bg-secondary {
 			--bg-opacity: 1;
-			background-color: #3B4252;
 			background-color: rgba(var(--bg-secondary), var(--bg-opacity))
 		}
 		.bg-white {
 			--bg-opacity: 1;	
-			background-color: white; 
 			background-color: rgba(var(--bg-white), var(--bg-opacity)) 
 		}
 	`);
@@ -70,12 +67,10 @@ it('generate text color utilities with hover variant', async () => {
 	expect(css).toMatchCss(`
 		.text-default {
 			--text-opacity: 1;
-			color: #2E3440;
 			color: rgba(var(--text-default), var(--text-opacity))
 		}
 		.hover\\:text-default:hover {
 			--text-opacity: 1;
-			color: #2E3440;
 			color: rgba(var(--text-default), var(--text-opacity))
 		}
 	`);

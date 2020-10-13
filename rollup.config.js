@@ -6,7 +6,7 @@ import pkg from './package.json';
 export default [
 	{
 		input: 'src/main.js',
-		external: ['tinycolor2', 'lodash.kebabcase'],
+		external: ['tinycolor2', 'lodash.kebabcase', 'lodash.merge'],
 		output: [
 			{ 
 				file: pkg.main, 

@@ -17,6 +17,6 @@ export default function({
 
   return {
     [variable]: '1',
-    [property]: [color, `rgba(var(--${prefix}${name}), var(${variable}))`],
+    [property]: [`rgba(var(--${prefix}${name}), var(${variable}))`],
   };
 }
