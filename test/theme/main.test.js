@@ -37,6 +37,9 @@ it('generate theme based on tailwind config', async () => {
 			dark: {
 				selector: 'data-theme="dark"',
 				scheme: {
+					backgroundColor: {
+						primary: '#4299E1',
+					},
 					textColor: {
 						default: '#161b25',
 					},
@@ -50,16 +53,15 @@ it('generate theme based on tailwind config', async () => {
 			--bg-primary: 0, 112, 243;
 		}
 		data-theme="dark" {
+			--bg-primary: 66, 153, 225;
 			--text-default: 22, 27, 37;
 		}
 		.bg-primary {
 			--bg-opacity: 1;
-      background-color: #0070F3;
       background-color: rgba(var(--bg-primary), var(--bg-opacity));
 		}
 		.text-default {
 			--text-opacity: 1;
-      color: #161b25;
       color: rgba(var(--text-default), var(--text-opacity));
 		}
 	`);
