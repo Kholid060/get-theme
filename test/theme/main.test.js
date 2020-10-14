@@ -1,4 +1,3 @@
-import plugin from 'tailwindcss/plugin';
 import cssMatcher from 'jest-matcher-css';
 import merge from 'lodash.merge';
 import generateTailwindCss from '../generateTailwindCss';
@@ -17,7 +16,7 @@ async function getCss(tailwindConfig) {
 			backgroundColor: false,
 			textColor: false,
 		},
-		plugins: [theme(plugin)],
+		plugins: [theme()],
 	}, tailwindConfig));
 
 	return css;
@@ -49,7 +48,7 @@ it('generate theme based on tailwind config', async () => {
 	});
 
 	expect(css).toMatchCss(` 
-		:root {
+		:root, data-theme="light" {
 			--bg-primary: 0, 112, 243;
 		}
 		data-theme="dark" {
