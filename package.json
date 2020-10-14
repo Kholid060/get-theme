@@ -1,7 +1,8 @@
 {
-  "name": "tailwind-theme",
-  "version": "1.0.0",
-  "main": "dist/theme.cjs.js",
+  "name": "get-theme",
+  "version": "0.2.0",
+  "main": "dist/get-theme.cjs.js",
+  "license": "MIT",
   "dependencies": {
     "lodash.kebabcase": "^4.1.1",
     "lodash.merge": "^4.6.2",
