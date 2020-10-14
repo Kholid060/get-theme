@@ -1,29 +1,16 @@
 import kebabCase from 'lodash.kebabcase';
 import alphaColorVariable from '../utils/alphaColorVariable';
-import properties from '../utils/properties';
+import * as utils from './utils';
 
-export default function ({ name, scheme }, { addUtilities, variants }) {
-  const utilities = Object.entries(scheme).map(([modifier, value]) => {
-    if (properties[name]) {
-      const { prefix, property, variable } = properties[name];
+export default function ({ name, scheme }, plugin) {
+  if (utils[name]) {
+    utils[name](scheme, plugin);
+    return;
+  }
 
-      return {
-        [`.${prefix + modifier}`]: alphaColorVariable({
-          name: modifier,
-          color: value,
-          prefix,
-          property,
-          variable,
-        }) 
-      };
-    }
-
-    return {
-      [`.${modifier}`]: {
-        [kebabCase(name)]: `var(--${modifier})`,
-      },
-    };   
-  });
-
-  addUtilities(utilities, variants(name));
+  plugin.addUtilities({
+    [`.${modifier}`]: {
+      [kebabCase(name)]: `var(--${modifier})`,
+    },
+  }, variants(name));
 };
