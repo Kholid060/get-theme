@@ -15,10 +15,10 @@ it('generate variants for given color', () => {
 
 it('generate opacity variants for given color', () => {
 	expect(generateVariables('textColor', {
-		default: '#00000059',
+		default: 'rgba(21, 20, 20, 0.75)',
 		light: '#50505080',
 	})).toEqual({
-		'--text-default': '0, 0, 0, 0.3',
-		'--text-light': '80, 80, 80, 0.5',
+		'--text-default': '21, 20, 20, 0.75',
+		'--text-light': '80, 80, 80, 0.5019607843137255',
 	});
 });

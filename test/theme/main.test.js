@@ -24,19 +24,24 @@ async function getCss(tailwindConfig) {
 
 it('generate theme based on tailwind config', async () => {
 	const css = await getCss({
+		variants: {
+			borderColor: false,
+			textColor: false,
+			backgroundColor: false,
+		},
 		customTheme: {
 			light: {
 				isDefault: true,
 				scheme: {
-					backgroundColor: {
+					colors: {
 						primary: '#0070F3',
 					},
 				},
 			},
 			dark: {
-				selector: 'data-theme="dark"',
+				selector: '[data-theme="dark"]',
 				scheme: {
-					backgroundColor: {
+					colors: {
 						primary: '#4299E1',
 					},
 					textColor: {
@@ -48,16 +53,24 @@ it('generate theme based on tailwind config', async () => {
 	});
 
 	expect(css).toMatchCss(` 
-		:root, data-theme="light" {
-			--bg-primary: 0, 112, 243;
+		:root, [data-theme="light"] {
+			--color-primary: 0, 112, 243;
 		}
-		data-theme="dark" {
-			--bg-primary: 66, 153, 225;
+		[data-theme="dark"] {
+			--color-primary: 66, 153, 225;
 			--text-default: 22, 27, 37;
 		}
 		.bg-primary {
 			--bg-opacity: 1;
-      background-color: rgba(var(--bg-primary), var(--bg-opacity));
+      background-color: rgba(var(--color-primary), var(--bg-opacity));
+		}
+		.border-primary {
+			--border-opacity: 1;
+      border-color: rgba(var(--color-primary), var(--border-opacity));
+		}
+		.text-primary {
+			--text-opacity: 1;
+      color: rgba(var(--color-primary), var(--text-opacity));
 		}
 		.text-default {
 			--text-opacity: 1;

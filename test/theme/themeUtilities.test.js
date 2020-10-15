@@ -118,39 +118,39 @@ it('generates colors utilities', async () => {
 	expect(css).toMatchCss(` 
 		.bg-primary {
       --bg-opacity: 1;
-      background-color: rgba(var(--bg-primary), var(--bg-opacity));
+      background-color: rgba(var(--color-primary), var(--bg-opacity));
     }
     .bg-warning {
       --bg-opacity: 1;
-      background-color: rgba(var(--bg-warning), var(--bg-opacity));
+      background-color: rgba(var(--color-warning), var(--bg-opacity));
     } 
     .bg-danger {
       --bg-opacity: 1;
-      background-color: rgba(var(--bg-danger), var(--bg-opacity));
+      background-color: rgba(var(--color-danger), var(--bg-opacity));
     } 
     .border-primary {
       --border-opacity: 1;
-      border-color: rgba(var(--border-primary), var(--border-opacity));
+      border-color: rgba(var(--color-primary), var(--border-opacity));
     } 
     .border-warning {
       --border-opacity: 1;
-      border-color: rgba(var(--border-warning), var(--border-opacity));
+      border-color: rgba(var(--color-warning), var(--border-opacity));
     } 
     .border-danger {
       --border-opacity: 1;
-      border-color: rgba(var(--border-danger), var(--border-opacity));
+      border-color: rgba(var(--color-danger), var(--border-opacity));
     } 
     .text-primary {
       --text-opacity: 1;
-      color: rgba(var(--text-primary), var(--text-opacity));
+      color: rgba(var(--color-primary), var(--text-opacity));
     } 
     .text-warning {
       --text-opacity: 1;
-      color: rgba(var(--text-warning), var(--text-opacity));
+      color: rgba(var(--color-warning), var(--text-opacity));
     } 
     .text-danger {
       --text-opacity: 1;
-      color: rgba(var(--text-danger), var(--text-opacity));
+      color: rgba(var(--color-danger), var(--text-opacity));
     }
 	`);
 });

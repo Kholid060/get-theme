@@ -1,7 +1,7 @@
 {
-  "name": "get-theme",
+  "name": "switch-theme",
   "version": "0.2.0",
-  "main": "dist/get-theme.cjs.js",
+  "main": "dist/switch-theme.cjs.js",
   "license": "MIT",
   "dependencies": {
     "lodash.kebabcase": "^4.1.1",

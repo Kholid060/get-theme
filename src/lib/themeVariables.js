@@ -9,7 +9,7 @@ export default function({ scheme, selector, isDefault, name }, plugin) {
 		return variables;
 	}, {});
 
-	const validSelector = (selector || `data-theme="${name}"`);
+	const validSelector = (selector || `[data-theme="${name}"]`);
 	const themeSelector = isDefault || name === 'default' 
 		? `:root, ${validSelector}` 
 		: validSelector;

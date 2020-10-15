@@ -1,11 +1,15 @@
 import alphaColorVariable from '../../utils/alphaColorVariable';
 
-export default function (colors, { addUtilities, variants }) {
+export default function (
+	colors, 
+	{ addUtilities, variants },
+	isColorsVariant,
+) {
 	const utilities = Object.entries(colors).map(([modifier, color]) => {
 		const property = alphaColorVariable({
 			modifier,
 			color,
-			prefix: 'text-',
+			prefix: isColorsVariant ? 'color-' : 'text-',
 			property: 'color',
 			variable: '--text-opacity',
 		});
