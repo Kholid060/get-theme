@@ -34,7 +34,7 @@ it('generate theme based on tailwind config', async () => {
 				},
 			},
 			dark: {
-				selector: 'data-theme="dark"',
+				selector: '[data-theme="dark"]',
 				scheme: {
 					backgroundColor: {
 						primary: '#4299E1',
@@ -48,10 +48,10 @@ it('generate theme based on tailwind config', async () => {
 	});
 
 	expect(css).toMatchCss(` 
-		:root, data-theme="light" {
+		:root, [data-theme="light"] {
 			--bg-primary: 0, 112, 243;
 		}
-		data-theme="dark" {
+		[data-theme="dark"] {
 			--bg-primary: 66, 153, 225;
 			--text-default: 22, 27, 37;
 		}

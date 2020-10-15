@@ -11,7 +11,7 @@ export default function(name, scheme) {
       const { prefix } = properties[name];
       const { r, g, b, a } = color.toRgb();
 
-      variables[`--${prefix}${modifier}`] = `${r}, ${g}, ${b}${a === 1 ? '' : `, ${a.toFixed(1)}`}`;
+      variables[`--${prefix}${modifier}`] = `${r}, ${g}, ${b}${a === 1 ? '' : `, ${a}`}`;
       
       return variables;
     }
